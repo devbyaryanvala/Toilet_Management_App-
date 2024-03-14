@@ -109,15 +109,15 @@ function storeTaskInLocalStorage(task) {
 
 // Deletes a single task from the task list
 function deleteTask(e) {
-if (e.target.parentElement.classList.contains('delete-item')) {
-    if (confirm('Are you sure? 😢')) {
-        const taskItem = e.target.parentElement.parentElement;
-        const taskName = taskItem.childNodes[1].textContent.trim();
-        
-        taskItem.remove();
-        removeTaskFromLocalStorage(taskName);
+    if (e.target.parentElement.classList.contains('delete-item')) {
+        if (confirm('Are you sure? 😢')) {
+            const taskItem = e.target.parentElement.parentElement;
+            const taskName = taskItem.childNodes[1].textContent.trim();
+            
+            taskItem.remove();
+            removeTaskFromLocalStorage(taskName);
+        }
     }
-}
 }
 // Delete task from local storage
 function removeTaskFromLocalStorage(taskToDelete) {
